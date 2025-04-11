@@ -2,124 +2,106 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login(User)</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(to bottom right, #f0f4f8, #e6edf5);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OTP Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        .container-box {
-            background: #fff;
-            padding: 40px;
-            border-radius: 10px;
-            max-width: 460px;
-            width: 100%;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-            border-top: 6px solid #0F3D8C;
-        }
+    .image{
+      display: flex;
+      justify-content: center;
+    }
 
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+    form {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
 
-        .header h1 {
-            font-size: 22px;
-            color: #0F3D8C;
-            margin-bottom: 5px;
-        }
+    .form-group {
+      margin-bottom: 20px;
+    }
 
-        .header p {
-            font-size: 14px;
-            color: #555;
-        }
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-top: 5px;
+    }
 
-        .btn-custom {
-            background: linear-gradient(to right, #0F3D8C, #1E90FF);
-            border: none;
-            font-weight: 600;
-            transition: background 0.3s ease;
-        }
+    button {
+      margin-top: 10px;
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
 
-        .btn-custom:hover {
-            background: linear-gradient(to right, #1E90FF, #0F3D8C);
-        }
-
-        .emblem {
-            width: 60px;
-            margin-bottom: 10px;
-        }
-
-        #otp-section {
-            display: none;
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 25px;
-            font-size: 13px;
-            color: #777;
-        }
-    </style>
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 
 <body>
 
-    <div class="container container-box">
-        <div class="header">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="National Emblem"
-                class="emblem">
-            <h1>Voter Identity Verification</h1>
-            <p>Election Commission of India</p>
-        </div>
-
-        <!-- Voter Details Form -->
-        <form id="verification-form">
-            <div class="mb-3">
-                <input type="text" class="form-control" id="name" placeholder="Full Name (as per Aadhar)" required>
-            </div>
-            <div class="mb-3">
-                <input type="number" class="form-control" id="voterId" placeholder="Voter ID Number" required>
-            </div>
-            <div class="mb-3">
-                <input type="text" class="form-control" id="dob" placeholder="Date of Birth (DD-MM-YYYY)" required>
-            </div>
-        </form>
-
-        <div class="otp-container">
-            <form action="lin.php" method="POST">
-                <div class="mb-3">
-                    <input type="text" class="form-control" id="phone" name="phone"
-                        placeholder="Enter your phone number" required>
-                </div>
-                <button type="submit" class="btn btn-primary w-100">Send OTP</button>
-            </form>
-        </div>
-        <div style="margin: 10px 0;">
-            <p>Don't have an account? <a href="register.php">Register</a></p>
-        </div>
-        <div class="footer">
-            This service is provided under the guidelines of the Election Commission of India 🇮🇳
-        </div>
+  <form action="lin.php" method="POST">
+    <div class="header">
+      <div class="image">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="National Emblem"
+          class="emblem" width="150" height="150">
+      </div>
+      <h1>Voter Identity Verification</h1>
+      <p>Election Commission of India</p>
+    </div>
+    <div class="form-group">
+      <label for="name">Full Name (as per Aadhar):</label>
+      <input type="text" name="name" id="name" placeholder="Full Name (as per Aadhar)" required>
     </div>
 
-    <script>
-        function showOTPSection() {
-            document.getElementById('otp-section').style.display = 'block';
-        }
-    </script>
+    <div class="form-group">
+      <label for="voterId">Voter ID Number:</label>
+      <input type="number" name="voterId" id="voterId" placeholder="Voter ID Number" required>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <div class="form-group">
+      <label for="dob">Date of Birth (DD-MM-YYYY):</label>
+      <input type="text" name="dob" id="dob" placeholder="Date of Birth (DD-MM-YYYY)" required>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone Number:</label>
+      <input type="text" name="phone" id="phone" placeholder="Enter your number" required>
+    </div>
+
+    <button type="submit" name="getOtp">Submit</button>
+
+    <div class="form-group">
+      <label for="otp">Enter OTP:</label>
+      <input type="number" name="otp" id="otp" placeholder="Enter OTP">
+    </div>
+
+    <button type="submit" name="verifyOtp">Verify</button>
+  </form>
+
 </body>
 
 </html>
