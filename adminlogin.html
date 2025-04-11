@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login(User)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom right, #f0f4f8, #e6edf5);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container-box {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 460px;
+            width: 100%;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            border-top: 6px solid #0F3D8C;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 22px;
+            color: #0F3D8C;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .btn-custom {
+            background: linear-gradient(to right, #0F3D8C, #1E90FF);
+            border: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background: linear-gradient(to right, #1E90FF, #0F3D8C);
+        }
+
+        .emblem {
+            width: 60px;
+            margin-bottom: 10px;
+        }
+
+        #otp-section {
+            display: none;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 13px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container container-box">
+        <div class="header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="National Emblem"
+            class="emblem">
+            <h1>Voter Identity Verification</h1>
+            <p>Election Commission of India</p>
+        </div>
+
+        <!-- Voter Details Form -->
+        <form id="verification-form">
+            <div class="mb-3">
+                <input type="text" class="form-control" id="name" placeholder="Username" required>
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control" id="voterId" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+        </form>
+
+        <div class="footer">
+            This service is provided under the guidelines of the Election Commission of India 🇮🇳
+        </div>
+    </div>
+
+    <script>
+        function showOTPSection() {
+            document.getElementById('otp-section').style.display = 'block';
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
