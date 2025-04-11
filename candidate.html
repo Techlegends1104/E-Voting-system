@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Political Parties | Indian Voting System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom Style -->
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff9933, #ffffff, #138808);
+            background-size: 300% 300%;
+            animation: gradientBG 10s ease infinite;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .party-card {
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .party-card:hover {
+            transform: scale(1.03);
+            text-decoration: none;
+        }
+
+        .party-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+
+        .party-name {
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .section-title {
+            text-align: center;
+            padding: 40px 0 20px;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2 class="section-title">Registered Political Parties of India</h2>
+        <div class="row g-4">
+
+            <!-- BJP -->
+            <div class="col-md-4">
+                <a href="bjp.html" class="party-card text-center d-block">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/BJP_Flag.svg/1200px-BJP_Flag.svg.png"
+                        class="party-logo mb-3" alt="BJP Logo">
+                    <div class="party-name">Bharatiya Janata Party (BJP)</div>
+                    <p>Right-wing party promoting nationalism, economic development and strong defense policies.</p>
+                </a>
+            </div>
+
+            <!-- INC -->
+            <div class="col-md-4">
+                <a href="INC.html" class="party-card text-center d-block">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Indian_National_Congress_Flag.svg/1200px-Indian_National_Congress_Flag.svg.png"
+                        class="party-logo mb-3" alt="INC Logo">
+                    <div class="party-name">Indian National Congress (INC)</div>
+                    <p>Oldest political party advocating secularism, democratic socialism, and inclusive growth.</p>
+                </a>
+            </div>
+
+            <!-- AAP -->
+            <div class="col-md-4">
+                <a href="aapparty.html" class="party-card text-center d-block">
+                    <img src="https://static.toiimg.com/thumb/msid-61293702,width-1070,height-580,imgsize-278001,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg"
+                        class="party-logo mb-3" alt="AAP Logo">
+                    <div class="party-name">Aam Aadmi Party (AAP)</div>
+                    <p>Focused on anti-corruption, education, healthcare and clean governance initiatives.</p>
+                </a>
+            </div>
+
+            <!-- JMM -->
+            <div class="col-md-4">
+                <a href="jmm.html" class="party-card text-center d-block">
+                    <img src="https://www.prabhatkhabar.com/wp-content/uploads/2024/01/jmm-263-1.jpg"
+                        class="party-logo mb-3" alt="JMM Logo">
+                    <div class="party-name">Jharkhand Mukti Morcha (JMM)</div>
+                    <p>Regional party mainly based in Jharkhand advocating tribal rights, local governance, and
+                        socio-economic justice.</p>
+                </a>
+            </div>
+
+            <!-- BSP -->
+            <div class="col-md-4">
+                <a href="bsp.html" class="party-card text-center d-block">
+                    <img src="https://images.news18.com/ibnlive/uploads/2021/02/1614153935_51olnod-qjl._sl1132_.jpg"
+                        class="party-logo mb-3" alt="BSP Logo">
+                    <div class="party-name">Bahujan Samaj Party (BSP)</div>
+                    <p>Advocates for the rights of Dalits, OBCs, and marginalized communities. Strong presence in Uttar
+                        Pradesh.</p>
+                </a>
+            </div>
+
+            <!-- Shiv Sena -->
+            <div class="col-md-4">
+                <a href="shiv-sena.html" class="party-card text-center d-block">
+                    <img src="https://static.theprint.in/wp-content/uploads/2023/02/shiv-sena-logo.jpg"
+                        class="party-logo mb-3" alt="Shiv Sena Logo">
+                    <div class="party-name">Shiv Sena</div>
+                    <p>A regional party from Maharashtra with a strong focus on Marathi pride, Hindutva ideology,
+                        regional development, and cultural preservation.</p>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #e6f2ff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #000;
+      color: orange;
+      padding: 20px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .leader-container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+      justify-content: center;
+    }
+
+    .leader-card {
+      display: flex;
+      border: 1px solid #ccc;
+      margin: 10px;
+      background-color: #fff;
+      max-width: 800px;
+      width: 100%;
+      overflow: hidden; /* Ensures the image doesn't overflow the container */
+    }
+
+    .leader-card img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease; /* Smooth animation */
+}
+
+.leader-card img:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+
+    .leader-info {
+      padding: 20px;
+      flex: 1;
+    }
+
+    .leader-info h2 {
+      margin-top: 0;
+      color: teal;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin: 20px;
+      padding: 10px 20px;
+      background-color: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .back-btn:hover {
+      background-color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .leader-card {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .leader-card img {
+        width: 100%;
+        height: auto;
+      }
+
+      .leader-info {
+        text-align: center;
+      }
+    }
