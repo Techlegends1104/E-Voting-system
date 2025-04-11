@@ -1,84 +1,436 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Indian Voting System</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>India E-Voting System</title>
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom right, #ffffff, #e6ffe6);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #f8f9fa;
+      border-bottom: 1px solid #ddd;
+      position: relative;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropbtn {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 14px;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: white;
+      min-width: 140px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      border-radius: 6px;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .dropdown-content a {
+      color: #333;
+      padding: 10px 14px;
+      text-decoration: none;
+      display: block;
+      border-bottom: 1px solid #eee;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown-content a:last-child {
+      border-bottom: none;
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #0f5f5c;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 10px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .btn-vote {
+      background: #007bff;
+    }
+
+    .btn-admin {
+      background: #28a745;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 0.85rem;
+      color: #888;
+      background-color: #f8f9fa;
+      border-top: 1px solid #ddd;
+    }
+
+
+    .about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 30px;
+  background-color: #f4fdf4;
+  gap: 30px;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  color: #0f5f5c;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 280px;
+  max-width: 500px;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+.eci-footer{
+  background-color: #004274;
+}
+.eci-footer p{
+  color: white;
+}
+.eci-footer a {
+      color: #ddd;
+      text-decoration: none;
+    }
+    .eci-footer a:hover {
+      text-decoration: underline;
+    }
+    .eci-bottom {
+      text-align: center;
+      padding-top: 20px;
+      font-size: 14px;
+      color: #aaa;
+    }
+    .social-icons img {
+      margin-right: 10px;
+    }
+    .app-icons img {
+      width: 50px;
+      margin-right: 10px;
+    }
+    .carousel-item img {
+  height: 400px; /* or whatever height you want */
+  /* width: 700px; */
+  object-fit: cover;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.fa-user{
+  color: black;
+  font-size:xx-large;
+}
+.dropdown-content a {
+  color: #000;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.show {
+  display: block;
+}
+
+
+
+  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-    <!-- Top Navigation Header -->
-<header class="top-nav">
-    <div class="nav-container">
-      <div class="logo">
-        <img src="WhatsApp Image 2025-04-11 at 18.01.52_3cf3e352.jpg" alt="Logo">
-        <span>E-Voter SYSTEM</span>
+
+  <header>
+    <div class="logo">
+      <img src="WhatsApp Image 2025-04-11 at 18.01.52_3cf3e352.jpg" alt="National Emblem">
+    </div>
+    <div class="dropdown">
+      <button onclick="toggleDropdown()" class="dropbtn"> <i class="fa fa-user"></i></button>
+      <div id="dropdownMenu" class="dropdown-content">
+        <a href="login.html">User</a>
+        <a href="admin.html">Admin</a>
       </div>
-      <nav class="menu">
-        <a href="#" class="active">HOME</a>
-        <a href="#">Voter Registratiion</a>
-        <a href="#">Voting poll</a>
-        <a href="#">Parties Informationn</a>
-        <a href="#">Admin</a>
-        <a href="#">Contact us</a>
-      </nav>
     </div>
   </header>
+
+  <div class="main">
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                                aria-label="Slide 4"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="https://www.ids.ac.uk/wp-content/uploads/2024/05/Blognews-story-1024x600-px-1.jpg" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                </div>
+                            </div>
+                            <!-- <div class="carousel-item">
+                                <img src="<link href="https://media.licdn.com/dms/image/v2/D5612AQFWwo835UtjiA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1715143681696?e=2147483647&v=beta&t=w2i6TnHH_7K7NKW_-WIxuHxLSRUhaO4U-322YFQfABg" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                </div>
+                            </div> -->
+                            <div class="carousel-item">
+                                <img src="https://vajiramandravi.com/upsc-exam/wp-content/uploads/2025/01/data-207.jpg" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://media.istockphoto.com/id/483321391/vector/hand-with-voting-sign-of-india.jpg?s=612x612&w=0&k=20&c=PdlFjsyUg7BK91xCFgbg01kVj9cVDV2cBsraSw8L8-U=" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  </div>
+
+
+  <section class="about-container">
+    <div class="about-text">
+      <h2>About the Indian E-Voting System</h2>
+      <p>
+        The Indian E-Voting System is a revolutionary platform designed to simplify and secure the electoral process using blockchain technology. It allows citizens to cast their vote digitally from anywhere while ensuring transparency, trust, and data integrity.
+      </p>
+      <p>
+        With features like real-time verification, voter privacy, and tamper-proof records, this system aims to modernize democracy and increase voter participation across the country.
+      </p>
+      <p>
+        Our mission is to make every vote count — securely, swiftly, and smartly.
+      </p>
+    </div>
+    <div class="about-image">
+      <img src="https://img.jagranjosh.com/images/2024/April/1842024/phase-one.jpg" alt="E-Voting Illustration">
+    </div>
+  </section>
   
-  <main>
-    <div class="container">
-      <img src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg" class="flag" alt="India Flag">
-      <h1>Welcome to Indian Voting System</h1>
-      <p>Empowering citizens through secure and transparent online voting. Use your verified identity to cast your vote and shape the future of our nation.</p>
-      <button class="btn" onclick="window.location.href='voting.html'">Get Started</button>
-    </div>
-  </main>
 
-  <footer class="eci-footer">
-    <div class="eci-container">
-      <div class="eci-column about">
-        <h3>Election Commission of India</h3>
-        <p>The Election Commission of India is an autonomous constitutional authority responsible for administering election processes in India.</p>
-        <p><strong>📍 Nirvachan Sadan, Ashoka Road, New Delhi – 110001</strong></p>
-        <div class="social-icons">
+  
 
-          <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/facebook.png" /></a>
-          <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" /></a>
-          <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/twitter.png" /></a>
-          <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/youtube-play.png" /></a>
+  <footer>
+    
+    <footer class="eci-footer">
+        <div class="container">
+          <div class="row text-center text-md-start">
+            <div class="col-md-3 mb-4">
+              <h5>Election Commission of India</h5>
+              <p>The Election Commission of India is an autonomous constitutional authority responsible for administering election processes in India.</p>
+              <p><strong>📍 Nirvachan Sadan, Ashoka Road, New Delhi – 110001</strong></p>
+              <div class="social-icons">
+                <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/facebook.png" /></a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" /></a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/twitter.png" /></a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/youtube-play.png" /></a>
+              </div>
+            </div>
+      
+            <div class="col-md-3 mb-4 text-center">
+              <img src="https://www.eci.gov.in/newimg/ticket-24.png" alt="General Election 2024" class="img-fluid rounded mb-2" style="max-width: 100px;">
+              <p><strong>General Election 2024</strong></p>
+              <a href="https://elections24.eci.gov.in" target="_blank">elections24.eci.gov.in</a>
+            </div>
+      
+            <div class="col-md-3 mb-4">
+              <h5>Quick Links</h5>
+              <ul class="list-unstyled">
+                <li><a href="#">About ECI</a></li>
+                <li><a href="#">Public Grievance</a></li>
+                <li><a href="#">Apply for Voter Card</a></li>
+                <li><a href="#">Download cVIGIL</a></li>
+                <li><a href="#">RTI Online</a></li>
+                <li><a href="#">Political Parties</a></li>
+              </ul>
+            </div>
+      
+            <div class="col-md-3 mb-4">
+              <h5>ECI Apps</h5>
+              <div class="app-icons d-flex justify-content-center justify-content-md-start">
+                <img src="https://www.eci.gov.in/newimg/icons/ict/kyc-eci.png" alt="voter">
+                <img src="https://www.eci.gov.in/newimg/icons/ict/voter-helpline.png" alt="KYC">
+                <img src="https://www.eci.gov.in/newimg/icons/ict/cVigil.png" alt="Eye">
+              </div>
+            </div>
+          </div>
+          <div class="eci-bottom">
+            &copy; 2025 Election Commission of India. All Rights Reserved.
+          </div>
         </div>
-      </div>
+      </footer>
 
-      <div class="eci-column election">
-        <img src="https://www.eci.gov.in/newimg/ticket-24.png" alt="General Election 2024" style="width: 100px; border-radius: 10px;" />
-        <p><strong>General Election 2024</strong></p>
-        <a href="https://elections24.eci.gov.in" target="_blank">elections24.eci.gov.in</a>
-      </div>
-
-      <div class="eci-column links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#">About ECI</a></li>
-          <li><a href="#">Public Grievance</a></li>
-          <li><a href="#">Apply for Voter Card</a></li>
-          <li><a href="#">Download cVIGIL</a></li>
-          <li><a href="#">RTI Online</a></li>
-          <li><a href="#">Political Parties</a></li>
-        </ul>
-      </div>
-
-      <div class="eci-column apps">
-        <h4>ECI Apps</h4>
-        <div class="app-icons">
-          <img src="https://www.eci.gov.in/newimg/icons/ict/kyc-eci.png" alt="voter" />
-          <img src="https://www.eci.gov.in/newimg/icons/ict/voter-helpline.png" alt="KYC" />
-          <img src="https://www.eci.gov.in/newimg/icons/ict/cVigil.png" alt="Eye" />
-        </div>
-      </div>
-    </div>
-    <div class="eci-bottom">
-      &copy; 2025 Election Commission of India. All Rights Reserved.
-    </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+  crossorigin="anonymous"></script>
+
+  <script>
+    function toggleDropdown() {
+      const menu = document.getElementById("dropdownMenu");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        const dropdowns = document.getElementsByClassName("dropdown-content");
+        for (let i = 0; i < dropdowns.length; i++) {
+          dropdowns[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+<script>
+  function toggleDropdown() {
+    var dropdown = document.getElementById("dropdownMenu");
+    dropdown.classList.toggle("show");
+  }
+
+  // Optional: Close dropdown if clicked outside
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn') && !event.target.closest('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      for (var i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  };
+</script>
+
 </body>
 </html>
