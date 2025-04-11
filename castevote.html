@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cast Your Vote</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            background: linear-gradient(to right, #c2e9fb, #a1c4fd);
+            font-family: 'Segoe UI', sans-serif;
+            padding: 40px;
+        }
+
+        .party-card {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .party-card:hover {
+            transform: scale(1.03);
+        }
+
+        .party-icon {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .check-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            color: green;
+            display: none;
+        }
+
+        .party-card.active .check-icon {
+            display: block;
+        }
+
+        /* Party-specific active styles */
+        .party-card.bjp.active {
+            /* box-shadow: 0 0 20px 5px #ff9800; */
+            border: 2px solid #f97D09;
+            background-color: #f97D09;
+            color: white;
+        }
+
+        .party-card.inc.active {
+            /* box-shadow: 0 0 20px 5px green; */
+            border: 2px solid #166a2f;
+            background-color: #166a2f;
+            color: white;
+        }
+
+        .party-card.aap.active {
+            border: 2px solid #009ADA;
+            background-color: #009ADA;
+            color: white;
+        }
+
+        .party-card.jmm.active {
+            border: 2px solid #004B1F;
+            background-color: #004B1F;
+            color: white;
+        }
+
+        .party-card.bsp.active {
+            background-color: #22409A;
+            border: 2px solid #22409A;
+            color: white;
+        }
+
+        .party-card.shiv-sena.active {
+            background-color: #ff6634;
+            border: 2px solid #ff6634;
+            color: white;
+        }
+
+        .submit-btn {
+            margin-top: 30px;
+            padding: 18px 40px;
+            font-size: 16px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            border-radius: 8px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: auto;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="text-center mb-5">Cast Your Vote</h2>
+        <div class="row g-4">
+
+            <!-- BJP -->
+            <div class="col-md-4">
+                <div class="party-card bjp" data-party="BJP">
+                    <i class="fas fa-check-circle check-icon"></i>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTqlqtMH-vx-aAkqHL2YY742IaWFhgq-yKWGHSD8NnSz_0mZf1Id6u1Nk105Ls3H7OzqM&usqp=CAU"
+                        alt="BJP" class="party-icon">
+                    <h5>Bharatiya Janata Party (BJP)</h5>
+                </div>
+            </div>
+
+            <!-- INC -->
+            <div class="col-md-4">
+                <div class="party-card inc" data-party="INC">
+                    <i class="fas fa-check-circle check-icon"></i>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/INC_Logo.png" alt="INC"
+                        class="party-icon">
+                    <h5>Indian National Congress (INC)</h5>
+                </div>
+            </div>
+
+            <!-- AAP -->
+            <div class="col-md-4">
+                <div class="party-card aap" data-party="AAP">
+                    <i class="fas fa-check-circle check-icon"></i>
+                    <img src="https://images.hindustantimes.com/rf/image_size_640x362/HT/p1/2014/11/13/Incoming/Pictures/1285780_Wallpaper2.jpg"
+                        alt="AAP" class="party-icon">
+                    <h5>Aam Aadmi Party (AAP)</h5>
+                </div>
+            </div>
+
+            <!-- JMM -->
+            <div class="col-md-4">
+                <div class="party-card jmm" data-party="JMM">
+                    <i class="fas fa-check-circle check-icon"></i>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Jharkhand_Mukti_Morcha_logo.svg"
+                        alt="JMM" class="party-icon">
+                    <h5>Jharkhand Mukti Morcha (JMM)</h5>
+                </div>
+            </div>
+
+            <!-- BSP -->
+            <div class="col-md-4">
+                <div class="party-card bsp" data-party="BSP">
+                    <i class="fas fa-check-circle check-icon"></i>
+                    <img src="https://allpngfree.com/apf-prod-storage-api/storage/thumbnails/bsp-elephant-logo-png-images--thumbnail-1673714518.jpg"
+                        alt="BSP" class="party-icon">
+                    <h5>Bahujan Samaj Party (BSP)</h5>
+                </div>
+            </div>
+
+            <!-- Shiv Sena -->
+            <div class="col-md-4">
+                <div class="party-card shiv-sena" data-party="Shiv Sena">
+                    <i class="fas fa-check-circle check-icon"></i>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7QeWOENeiXkHll4JeVmLTZMwOPfem0IREhQ&s"
+                        alt="Shiv Sena" class="party-icon">
+                    <h5>Shiv Sena</h5>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="submit-btn mt-4" onclick="submitVote()">
+            <h4>Submit Vote</h4>
+        </button>
+    </div>
+
+    <script>
+        const cards = document.querySelectorAll('.party-card');
+        let selectedParty = null;
+
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                cards.forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+                selectedParty = card.getAttribute('data-party');
+            });
+        });
+
+        function submitVote() {
+            if (selectedParty) {
+                Swal.fire({
+                    title: "Vote Submitted!",
+                    text: `Your vote for ${selectedParty} has been recorded. Thank you!`,
+                    icon: "success",
+                    confirmButtonText: "OK"
+                });
+                // Store vote logic can be added here
+            } else {
+                Swal.fire({
+                    title: "No Party Selected",
+                    text: "Please select a party before submitting your vote.",
+                    icon: "warning",
+                    confirmButtonText: "Got it"
+                });
+            }
+        }
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>
