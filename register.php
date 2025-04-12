@@ -76,7 +76,7 @@
 
     <div class="container container-box">
         <div class="header">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/National_Emblem_of_India.svg/2048px-National_Emblem_of_India.svg.png"
+            <img src="Emblem_of_India.svg"
                 alt="National Emblem" class="emblem">
             <h1>Voter Identity Verification</h1>
             <p>Election Commission of India</p>
@@ -101,6 +101,7 @@
     </div>
     <button type="submit" class="btn btn-primary w-100">Submit</button>
 </form>
+        <p style="text-align:center;margin-top:20px;">Have an account? <a href="login.html">Login</a></p>
         <div class="footer">
             This service is provided under the guidelines of the Election Commission of India 🇮🇳
         </div>
@@ -164,7 +165,7 @@
         }
     </script>
     <?php 
-include 'php/db.php';
+    include 'db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];

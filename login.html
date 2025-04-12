@@ -11,6 +11,7 @@
       background-color: #f4f4f4;
       height: 100vh;
       margin: 0;
+      padding: 20px 0;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -23,7 +24,8 @@
 
     form {
       background: white;
-      padding: 30px;
+      padding: 20px 40px;
+      margin: 20px 0;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       width: 100%;
@@ -31,12 +33,12 @@
     }
 
     .form-group {
-      margin-bottom: 20px;
+      margin: 20px 0;
     }
 
     input[type="text"],
     input[type="number"] {
-      width: 100%;
+      width: 94%;
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 5px;
@@ -44,7 +46,7 @@
     }
 
     button {
-      margin-top: 10px;
+      /* margin-top: 10px; */
       width: 100%;
       padding: 10px;
       background-color: #007bff;
@@ -66,11 +68,11 @@
   <form action="lin.php" method="POST">
     <div class="header">
       <div class="image">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="National Emblem"
-          class="emblem" width="150" height="150">
+        <img src="Emblem_of_India.svg" alt="National Emblem"
+          class="emblem" width="50px">
       </div>
       <h1>Voter Identity Verification</h1>
-      <p>Election Commission of India</p>
+      <p style="text-align: center;">Election Commission of India</p>
     </div>
     <div class="form-group">
       <label for="name">Full Name (as per Aadhar):</label>
@@ -100,6 +102,8 @@
     </div>
 
     <button type="submit" name="verifyOtp">Verify</button>
+
+    <p style="text-align: center;">Don't have an account?? <a href="register.php">Register</a></p>
   </form>
 
 </body>
